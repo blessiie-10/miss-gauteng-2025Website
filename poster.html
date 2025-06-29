@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voting Poster - Miss Gauteng 2025 Finalist</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      background-color: #ffe6f2;
+      font-family: 'Comic Sans MS', cursive;
+      color: #d63384;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffb6d9;
+      border-radius: 25px;
+      padding: 10px 30px;
+      box-shadow: 0 0 10px #d63384;
+      z-index: 1000;
+      width: auto;
+    }
+
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #c2185b;
+      text-decoration: underline;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 120px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    #poster {
+      max-width: 400px;
+      max-height: 600px;
+      border: 5px solid #ffb6d9;
+      border-radius: 15px;
+      box-shadow: 0 0 20px pink;
+      object-fit: contain;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #poster:hover {
+      transform: scale(1.03);
+    }
+
+    .instructions {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      background: #ffe6f2;
+      border: 3px solid #ffb6d9;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px #d63384aa;
+      text-align: left;
+    }
+
+    .instructions h2 {
+      color: #c2185b;
+      margin-top: 0;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .instructions ol li {
+      margin-bottom: 12px;
+    }
+
+    .caption {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #ffb6d9;
+      text-align: center;
+      padding: 15px;
+      font-size: 16px;
+      color: white;
+      margin-top: auto;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 10px;
+      box-shadow: 0 0 30px pink;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        width: 90%;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 8px 10px;
+        white-space: nowrap;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #poster {
+        width: 90%;
+        height: auto;
+        max-height: none;
+      }
+
+      .instructions {
+        width: 90%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="poster.html">Voting Poster</a>
+  </nav>
+
+  <div class="container">
+    <img id="poster" src="MissGautengFinalistPoster.jpg" alt="Miss Gauteng 2025 Finalist Poster" onclick="openFull(this)" />
+
+    <div class="instructions">
+      <h2>How to Vote 💖</h2>
+      <ol>
+        <li>Use the account number to vote.</li>
+        <li>Account name is <strong>Lauriam Agency</strong>.</li>
+        <li>The reference number is: <strong>Blessing Singo</strong>.</li>
+        <li>Share the proof of payment to: <strong>078 393 9740</strong>.</li>
+      </ol>
+      <div class="caption">You can vote as much as possible. Thank you so much for your support! 💕</div>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeFull()">
+    <img id="fullImg" src="" alt="Full view">
+  </div>
+
+  <footer>
+    &copy; 2025 Miss Gauteng Finalist | Made with 🤍 by Blessiie
+  </footer>
+
+  <script>
+    function openFull(imgElement) {
+      const overlay = document.getElementById('overlay');
+      const fullImg = document.getElementById('fullImg');
+      fullImg.src = imgElement.src;
+      overlay.style.display = 'flex';
+    }
+
+    function closeFull() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
